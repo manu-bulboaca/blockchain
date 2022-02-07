@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Insert Block Data</h1>
+<div class="form-container" mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>From</mat-label>
+    <input matInput [(ngModel)]="block.from">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>To</mat-label>
+    <input matInput [(ngModel)]="block.to">
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Amount</mat-label>
+    <input matInput [(ngModel)]="block.amount">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="block" cdkFocusInitial>Ok</button>
+</div>

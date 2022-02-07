@@ -1,0 +1,39 @@
+<mat-toolbar color="primary">
+  <span>Blockchain</span>
+</mat-toolbar>
+
+<div class="buttons-container">
+  <button mat-raised-button color="primary" (click)="addBlock()">
+    Create Block
+  </button>
+</div>
+
+<div class="block-container">
+  <div class="block" *ngFor="let block of blockchain.chain; let i = index">
+    <div *ngIf="block.data === null">
+      <mat-card class="example-card">
+        <mat-card-title>Genesis Block</mat-card-title>
+        <mat-card-content></mat-card-content>
+      </mat-card>
+    </div>
+    <div *ngIf="block.data !== null">
+      <mat-card class="example-card">
+        <mat-card-title>Block. {{i}}</mat-card-title>
+        <mat-card-content>
+          <p><b>From:</b> {{ block.data.from }}</p>
+          
+          <p><b>To:</b> {{ block.data.to }}</p>
+          
+          <p><b>Amount</b>: {{ block.data.amount }}</p>
+        </mat-card-content>
+        <mat-divider inset></mat-divider>
+        <mat-card-actions>
+          <button mat-button>Validate</button>
+        </mat-card-actions>
+        <mat-card-footer>
+          <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </div>
+</div>

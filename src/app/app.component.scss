@@ -1,0 +1,14 @@
+.buttons-container {
+  padding: 10px;
+}
+
+.block-container {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.block {
+  width: 220px;
+  padding: 10px;
+}
